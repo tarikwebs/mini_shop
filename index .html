@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فروشگاه دیجیتال</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>🛒 فروشگاه دیجیتال</h1>
+</header>
+
+<nav>
+    <button onclick="showSection('shop')">خرید محصولات</button>
+    <button onclick="showSection('wallet')">کیف پول</button>
+    <button onclick="showSection('orders')">سفارش‌های من</button>
+    <button onclick="showSection('support')">پشتیبانی</button>
+    <button onclick="showSection('about')">درباره ما</button>
+    <button onclick="adminLogin()">Admin</button>
+</nav>
+
+<main>
+    <!-- خرید -->
+    <section id="shop" class="active"></section>
+
+    <!-- کیف پول -->
+    <section id="wallet">
+        <h2>💰 کیف پول شما</h2>
+        <p id="balance">موجودی: 0 تومان</p>
+        <p>📌 شارژ حساب به صورت کارت به کارت فعال است.</p>
+        <p>🔒 پرداخت امن بزودی...</p>
+    </section>
+
+    <!-- سفارش‌های کاربر -->
+    <section id="orders">
+        <h2>📝 سفارش‌های من</h2>
+        <ul id="userOrders"></ul>
+    </section>
+
+    <!-- پشتیبانی -->
+    <section id="support">
+        <h2>📩 پشتیبانی</h2>
+        <textarea id="supportMsg" placeholder="پیام خود را بنویسید..."></textarea>
+        <button onclick="sendSupport()">ارسال پیام</button>
+    </section>
+
+    <!-- درباره ما -->
+    <section id="about">
+        <h2>درباره ما</h2>
+        <p>🎯 فروشگاه دیجیتال با خدمات آنلاین و امن. همه حقوق محفوظ است.</p>
+    </section>
+
+    <!-- پنل ادمین -->
+    <section id="adminPanel" class="hidden">
+        <h2>پنل ادمین</h2>
+        <p>مدیریت محصولات و سفارش‌ها</p>
+        <div id="adminProducts"></div>
+        <input type="text" id="newProductName" placeholder="نام محصول">
+        <input type="number" id="newProductPrice" placeholder="قیمت">
+        <button onclick="addProduct()">اضافه کردن محصول</button>
+
+        <h3>سفارش‌ها</h3>
+        <ul id="adminOrders"></ul>
+    </section>
+</main>
+
+<footer>
+    <p>2026 تمام حقوق محفوظ است nobody</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
